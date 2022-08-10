@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brightGray"
+    android:clipToPadding="false"
+    android:padding="10dp"
+    tools:context=".CheckoutDetailActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintL_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="10dp">
+
+        <ImageView
+            android:id="@+id/iv_cd_cover"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_cover" />
+
+        <TextView
+            android:id="@+id/tv_cd_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:contentDescription="[ title ]"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/spaceCadet"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintStart_toEndOf="@+id/iv_cd_cover"
+            app:layout_constraintTop_toTopOf="@id/iv_cd_cover" />
+
+        <TextView
+            android:id="@+id/tv_cd_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:contentDescription="[ price ]"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintEnd_toEndOf="@+id/tv_cd_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_cd_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cd_title" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ic_account_person"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_cd_cover" />
+
+        <TextView
+            android:id="@+id/shippingOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Shipping Option"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <RadioGroup
+            android:id="@+id/rbg_cd_shipping"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shippingOption">
+
+            <RadioButton
+                android:id="@+id/rb1_cd_jne"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/rb_selector"
+                android:button="@null"
+                android:fontFamily="@font/roboto_medium"
+                android:text="JNE - Rp10.000"
+                android:textAlignment="center"
+                android:textColor="@color/color_text_selector"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/rb2_cd_sicepat"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/rb_selector"
+                android:button="@null"
+                android:fontFamily="@font/roboto_medium"
+                android:text="SiCepat - Rp12.000"
+                android:textAlignment="center"
+                android:textColor="@color/color_text_selector"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/rb3_cd_jnt"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/rb_selector"
+                android:button="@null"
+                android:fontFamily="@font/roboto_medium"
+                android:text="JNT - Rp15.000"
+                android:textAlignment="center"
+                android:textColor="@color/color_text_selector"
+                android:textSize="14sp" />
+
+        </RadioGroup>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ic_account_person"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rbg_cd_shipping" />
+
+        <TextView
+            android:id="@+id/paymentMethod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Payment Method"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+        <TextView
+            android:id="@+id/transfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto"
+            android:text="Transfer"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/paymentMethod" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ic_account_person"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/transfer" />
+
+        <TextView
+            android:id="@+id/paymentDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Payment Details"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <TextView
+            android:id="@+id/subtotalForProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto"
+            android:text="Subtotal for Products"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/paymentDetails" />
+
+        <TextView
+            android:id="@+id/subtotalDelivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto"
+            android:text="Subtotal Delivery"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subtotalForProducts" />
+
+        <TextView
+            android:id="@+id/subtotalDelivery2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto"
+            android:text="Subtotal Delivery"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subtotalForProducts" />
+
+        <TextView
+            android:id="@+id/idPpn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto"
+            android:text="PPN"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/subtotalDelivery" />
+
+        <TextView
+            android:id="@+id/totalPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Total Payment"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idPpn" />
+
+        <TextView
+            android:id="@+id/tv_cd_stforProduct"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="[ price product ]"
+            android:fontFamily="@font/roboto"
+            android:textAlignment="textEnd"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintBaseline_toBaselineOf="@+id/subtotalForProducts"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/subtotalForProducts" />
+
+        <TextView
+            android:id="@+id/tv_cd_stDelivery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="[ price delivery ]"
+            android:fontFamily="@font/roboto"
+            android:textAlignment="textEnd"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintBaseline_toBaselineOf="@id/subtotalDelivery"
+            app:layout_constraintEnd_toEndOf="@id/tv_cd_stforProduct"
+            app:layout_constraintStart_toStartOf="@+id/tv_cd_stforProduct" />
+
+        <TextView
+            android:id="@+id/tv_cd_ppn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="ppn"
+            android:fontFamily="@font/roboto"
+            android:textAlignment="textEnd"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintBaseline_toBaselineOf="@id/idPpn"
+            app:layout_constraintEnd_toEndOf="@id/tv_cd_stDelivery"
+            app:layout_constraintStart_toStartOf="@+id/tv_cd_stforProduct" />
+
+        <TextView
+            android:id="@+id/tv_cd_totalPayment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="[ price total payment ]"
+            android:fontFamily="@font/roboto_medium"
+            android:textAlignment="textEnd"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintBaseline_toBaselineOf="@id/totalPayment"
+            app:layout_constraintEnd_toEndOf="@id/tv_cd_ppn"
+            app:layout_constraintStart_toStartOf="@+id/tv_cd_stDelivery" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ic_account_person"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/totalPayment" />
+
+        <Button
+            android:id="@+id/bt_cd_placeOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="Place Order"
+            android:text="Place Order"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="6dp"
+            app:cardBackgroundColor="#00FFFFFF"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/bt_cd_placeOrder"
+            app:layout_constraintEnd_toStartOf="@+id/bt_cd_placeOrder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bt_cd_placeOrder">
+
+            <TextView
+                android:id="@+id/totalPaymentPO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:fontFamily="@font/roboto"
+                android:text="Total Payment"
+                android:textColor="@color/spaceCadet"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_cd_po_totalPayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:contentDescription="[ total payment ]"
+                android:fontFamily="@font/roboto_medium"
+                android:textAlignment="textEnd"
+                android:textColor="@color/spaceCadet" />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/linearL_second"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_fc_gif"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@drawable/ic_circle_gif"
+            android:elevation="10dp"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/chewy"
+            android:letterSpacing="0.1"
+            android:text="Thank You\nfor the Order"
+            android:textAlignment="center"
+            android:textColor="@color/spaceCadet"
+            android:textSize="40sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

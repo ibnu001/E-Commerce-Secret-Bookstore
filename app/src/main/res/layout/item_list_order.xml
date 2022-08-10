@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mcv_item_list_order"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/gray"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/iv_ilo_cover"
+            android:layout_width="100dp"
+            android:layout_height="130dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_cover" />
+
+        <TextView
+            android:id="@+id/tv_ilo_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_bold"
+            android:letterSpacing="0.02"
+            android:maxLines="2"
+            android:text="[ title ]"
+            android:textColor="@color/spaceCadet"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_ilo_cover"
+            app:layout_constraintTop_toTopOf="@+id/iv_ilo_cover" />
+
+        <TextView
+            android:id="@+id/tv_ilo_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto"
+            android:letterSpacing="0.02"
+            android:text="[ price ]"
+            android:textColor="@color/spaceCadet"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_ilo_title"
+            app:layout_constraintStart_toEndOf="@id/iv_ilo_cover"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ilo_title" />
+
+        <Button
+            android:id="@+id/bt_ilo_checkout"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="5dp"
+            android:contentDescription="Checkout"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="Checkout"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/bt_ilo_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="5dp"
+            android:contentDescription="Delete"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="Delete"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/bt_ilo_checkout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

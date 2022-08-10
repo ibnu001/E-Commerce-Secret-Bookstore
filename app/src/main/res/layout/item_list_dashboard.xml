@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="#001A374D"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/iv_itemdb_cover"
+            android:layout_width="100dp"
+            android:layout_height="130dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_cover" />
+
+        <TextView
+            android:id="@+id/tv_itembook_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Title Book"
+            android:textAlignment="center"
+            android:textColor="@color/spaceCadet"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_itemdb_cover" />
+
+        <TextView
+            android:id="@+id/tv_itembook_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="by Author"
+            android:textAlignment="center"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintEnd_toEndOf="@+id/tv_itembook_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_itembook_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_itembook_title" />
+
+        <TextView
+            android:id="@+id/tv_itembook_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="Rp. 15.000"
+            android:textAlignment="center"
+            android:textColor="@color/spaceCadet"
+            app:layout_constraintEnd_toEndOf="@+id/tv_itembook_author"
+            app:layout_constraintStart_toStartOf="@+id/tv_itembook_author"
+            app:layout_constraintTop_toBottomOf="@+id/tv_itembook_author" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

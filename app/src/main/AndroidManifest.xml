@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ibnu.tugasakhiribnuadiv">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_logo_app_round"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_logo_app_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TugasAkhirIbnuAdiv"
+        tools:targetApi="31">
+        <activity
+            android:name=".SettingProfilActivity"
+            android:exported="false"
+            android:parentActivityName=".AccountActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".CheckoutDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".OrderActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".OrderActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".AddBookSalesActivity"
+            android:exported="false"
+            android:parentActivityName=".AccountActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".AccountActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".BookDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false"
+            android:parentActivityName=".LoginActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

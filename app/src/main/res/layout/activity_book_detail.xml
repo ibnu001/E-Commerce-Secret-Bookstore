@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brightGray"
+    android:clipToPadding="false"
+    android:padding="10dp"
+    tools:context=".BookDetailActivity">
+
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_bd_coverbook"
+                    android:layout_width="150dp"
+                    android:layout_height="180dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@drawable/ic_cover" />
+
+                <TextView
+                    android:id="@+id/tv_bd_headTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="30dp"
+                    android:contentDescription="[ head title ]"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textAlignment="center"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_bd_coverbook" />
+
+                <TextView
+                    android:id="@+id/tv_bd_headAuthor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:contentDescription="[ head author ]"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textAlignment="center"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@id/tv_bd_headTitle"
+                    app:layout_constraintStart_toStartOf="@id/tv_bd_headTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tv_bd_headTitle" />
+
+                <TextView
+                    android:id="@+id/tv_bd_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:letterSpacing="0.05"
+                    android:text="Details"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bd_headAuthor" />
+
+                <TextView
+                    android:id="@+id/tv_bd_bookPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_price"
+                    android:contentDescription="[ book price ]"
+                    android:fontFamily="@font/roboto_bold"
+                    android:letterSpacing="0.05"
+                    android:paddingStart="10dp"
+                    android:paddingTop="1dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="2dp"
+                    android:textColor="@color/brightGray"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tv_bd_details"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_bd_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:contentDescription="[ description ]"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.02"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/stock"
+                    app:layout_constraintTop_toBottomOf="@id/tv_bd_stock" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:text="Title"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/tv_bd_details"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bd_bookPrice" />
+
+                <TextView
+                    android:id="@+id/author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:text="Author"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/title"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bd_title" />
+
+                <TextView
+                    android:id="@+id/publisihing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:text="Publisher"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/author"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bd_author" />
+
+                <TextView
+                    android:id="@+id/pages"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:text="Pages"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/publisihing"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bd_publishing" />
+
+                <TextView
+                    android:id="@+id/category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:text="Category"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/pages"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_bd_pages" />
+
+                <TextView
+                    android:id="@+id/stock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:text="Stock"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/category"
+                    app:layout_constraintTop_toBottomOf="@id/tv_bd_category" />
+
+                <TextView
+                    android:id="@+id/titleDot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="55dp"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:text=":"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/title"
+                    app:layout_constraintStart_toEndOf="@+id/title" />
+
+                <TextView
+                    android:id="@+id/tv_bd_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="[ title ]"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/titleDot"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/titleDot" />
+
+                <TextView
+                    android:id="@+id/tv_bd_author"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="[ author ]"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/authorDot"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_bd_title"
+                    app:layout_constraintStart_toEndOf="@id/authorDot" />
+
+                <TextView
+                    android:id="@+id/tv_bd_publishing"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="[ publishing ]"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/publishingDot"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_bd_author"
+                    app:layout_constraintStart_toEndOf="@id/publishingDot" />
+
+                <TextView
+                    android:id="@+id/tv_bd_pages"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="[ pages ]"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/pagesDot"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_bd_publishing"
+                    app:layout_constraintStart_toEndOf="@id/pagesDot" />
+
+                <TextView
+                    android:id="@+id/tv_bd_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="[ category ]"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/categoryDot"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_bd_pages"
+                    app:layout_constraintStart_toEndOf="@id/categoryDot" />
+
+                <TextView
+                    android:id="@+id/tv_bd_stock"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="[ category ]"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/stockDot"
+                    app:layout_constraintEnd_toEndOf="@id/tv_bd_category"
+                    app:layout_constraintStart_toEndOf="@id/stockDot" />
+
+                <TextView
+                    android:id="@+id/authorDot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:text=":"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/author"
+                    app:layout_constraintLeft_toLeftOf="@id/titleDot" />
+
+                <TextView
+                    android:id="@+id/publishingDot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:text=":"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/publisihing"
+                    app:layout_constraintLeft_toLeftOf="@id/authorDot" />
+
+                <TextView
+                    android:id="@+id/pagesDot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:text=":"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/pages"
+                    app:layout_constraintLeft_toLeftOf="@id/publishingDot" />
+
+                <TextView
+                    android:id="@+id/categoryDot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:text=":"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/category"
+                    app:layout_constraintLeft_toLeftOf="@id/pagesDot" />
+
+                <TextView
+                    android:id="@+id/stockDot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing="0.05"
+                    android:text=":"
+                    android:textColor="@color/spaceCadet"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/stock"
+                    app:layout_constraintLeft_toLeftOf="@id/categoryDot" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/bt_bd_updateStock"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:contentDescription="Update Stock"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="Update Stock"
+            android:textAllCaps="false"
+            app:iconGravity="start"
+            app:iconSize="20dp" />
+
+        <Button
+            android:id="@+id/bt_bd_addToCart"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:contentDescription="Add to Cart"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="Add to Cart"
+            android:textAllCaps="false"
+            app:iconGravity="start"
+            app:iconSize="20dp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

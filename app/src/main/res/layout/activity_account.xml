@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brightGray"
+    android:clipToPadding="false"
+    android:padding="10dp"
+    tools:context=".AccountActivity">
+
+    <ImageView
+        android:id="@+id/iv_ac_fotoProfil"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_account" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="5dp"
+        app:cardBackgroundColor="#00FFFFFF"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_ac_fotoProfil"
+        app:layout_constraintEnd_toStartOf="@+id/tv_bt_ac_logout"
+        app:layout_constraintStart_toEndOf="@+id/iv_ac_fotoProfil"
+        app:layout_constraintTop_toTopOf="@+id/iv_ac_fotoProfil">
+
+        <TextView
+            android:id="@+id/tv_ac_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|top"
+            android:contentDescription="[ username ]"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/spaceCadet" />
+
+        <TextView
+            android:id="@+id/tv_ac_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:contentDescription="[ email ]"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/spaceCadet" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_bt_ac_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_account_person"
+        android:backgroundTint="@color/spaceCadet"
+        android:contentDescription="Logout"
+        android:padding="8dp"
+        app:drawableStartCompat="@drawable/ic_baseline_logout_24"
+        app:drawableTint="@color/brightGray"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_ac_fotoProfil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_ac_fotoProfil" />
+
+    <TextView
+        android:id="@+id/myOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="My Order"
+        android:textColor="@color/spaceCadet"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_ac_fotoProfil" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_myOrder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myOrder"
+        tools:listitem="@layout/item_list_my_order" />
+
+    <Button
+        android:id="@+id/bt_ac_addSales"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="Add Book Sale"
+        android:fontFamily="@font/roboto_medium"
+        android:text="Add Book Sale"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/bt_ac_addSales"
+        app:layout_constraintEnd_toEndOf="@+id/bt_ac_addSales"
+        app:layout_constraintStart_toStartOf="@+id/bt_ac_addSales">
+
+        <Button
+            android:id="@+id/bt_ac_changePicture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:contentDescription="Change Picture"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Change Picture"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/bt_ac_changeUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:contentDescription="Change Username"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Change Username"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
