@@ -7,7 +7,6 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.text.Html
 import android.view.View
 import android.widget.EditText
@@ -86,6 +85,9 @@ class BookDetailActivity : AppCompatActivity() {
         val uidProduct = intent.getStringExtra("uidBook")
         val uidUser = intent.getStringExtra("uidUser")
 
+        dbRef = FirebaseDatabase.getInstance().reference
+        val pathStock = dbRef.child("book_sale").child(uidProduct!!).child("stock")
+
         fAuth = FirebaseAuth.getInstance()
         val currentUser = fAuth.currentUser?.uid.toString()
 
@@ -98,31 +100,34 @@ class BookDetailActivity : AppCompatActivity() {
                 btBdUpdateStock.setOnClickListener {
                     val builder = AlertDialog.Builder(this@BookDetailActivity)
                     val dialogLayout = layoutInflater.inflate(R.layout.edit_text_stock, null)
-                    val etUpdateStock = dialogLayout.findViewById<EditText>(R.id.et_ets_updateStock)
+                    val etUpdateStock = dialogLayout.findViewById<EditText>(R.id.et_ets_update)
 
                     etUpdateStock.hint = "Stock"
 
+                    // pop up  update stock
+                    // custom title and button
                     val adTitle =
                         (Html.fromHtml("<font color=\"#1A374D\">" + "Enter Stock!" + "</font>"))
                     val adButton = (Html.fromHtml("<font color=\"#1A374D\">" + "Apply" + "</font>"))
 
-                    dbRef = FirebaseDatabase.getInstance().reference
-                    val pathStock = dbRef.child("book_sale").child(uidProduct!!).child("stock")
 
                     with(builder) {
                         setTitle(adTitle)
                         setPositiveButton(adButton) { dialog, which ->
                             val stock = etUpdateStock.text.toString()
 
-                            pathStock.setValue(stock)
-
-                            tvBdStock.text = stock
+                            if (stock.isEmpty()) {
+                                etUpdateStock.error = "Please enter book stock"
+                            } else {
+                                pathStock.setValue(stock)
+                            }
                         }
-
                         setView(dialogLayout)
                         show()
                     }
                 }
+
+                pathStock.get().addOnSuccessListener { tvBdStock.text = it.value.toString() }
             }
         }
     }

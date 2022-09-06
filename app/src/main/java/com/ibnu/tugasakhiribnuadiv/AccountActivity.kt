@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
@@ -12,26 +11,19 @@ import android.text.InputType
 import android.util.Log
 import android.view.View
 import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
-import com.google.firebase.storage.UploadTask
 import com.ibnu.tugasakhiribnuadiv.adapter.HistoryOrderAdapter
 import com.ibnu.tugasakhiribnuadiv.databinding.ActivityAccountBinding
 import com.ibnu.tugasakhiribnuadiv.model.HistoryOrder
-import java.util.*
 import kotlin.collections.ArrayList
 
 class AccountActivity : AppCompatActivity() {
@@ -99,13 +91,13 @@ class AccountActivity : AppCompatActivity() {
         }
 
         binding.btAcChangePicture.setOnClickListener {
-            startActivity(Intent(this@AccountActivity, SettingProfilActivity::class.java))
+            startActivity(Intent(this@AccountActivity, SettingProfilPictureActivity::class.java))
         }
 
         binding.btAcChangeUsername.setOnClickListener {
             val builder = AlertDialog.Builder(this@AccountActivity)
             val dialogLayout = layoutInflater.inflate(R.layout.edit_text_stock, null)
-            val changeUnm = dialogLayout.findViewById<EditText>(R.id.et_ets_updateStock)
+            val changeUnm = dialogLayout.findViewById<EditText>(R.id.et_ets_update)
 
             dbRef = FirebaseDatabase.getInstance().reference
             val uidUsername = fAuth.currentUser?.uid.toString()
@@ -114,18 +106,25 @@ class AccountActivity : AppCompatActivity() {
             changeUnm.hint = "Change Username"
             changeUnm.inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
 
-            val adTitle = (Html.fromHtml("<font color=\"#1A374D\">" + "Change Username" + "</font>"))
+            // pop up update username
+            // custom title and button
+            val adTitle =
+                (Html.fromHtml("<font color=\"#1A374D\">" + "Change Username" + "</font>"))
             val adButton = (Html.fromHtml("<font color=\"#1A374D\">" + "Apply" + "</font>"))
-
 
             with(builder) {
                 setTitle(adTitle)
                 setPositiveButton(adButton) { dialog, which ->
                     val cUsername = changeUnm.text.toString()
 
-                    pathChgUsernameChg.setValue(cUsername)
+                    if (cUsername.isEmpty()) {
+                        changeUnm.error = "Please enter your username"
+                        changeUnm.requestFocus()
+                    } else {
+                        pathChgUsernameChg.setValue(cUsername)
+                        binding.tvAcUsername.text = cUsername
+                    }
 
-                    binding.tvAcUsername.text = cUsername
                 }
 
                 setView(dialogLayout)

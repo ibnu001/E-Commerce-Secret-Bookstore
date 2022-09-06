@@ -8,11 +8,9 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.core.widget.doOnTextChanged
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -20,12 +18,12 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
-import com.ibnu.tugasakhiribnuadiv.databinding.ActivitySettingProfilBinding
+import com.ibnu.tugasakhiribnuadiv.databinding.ActivitySettingProfilPictureBinding
 import java.util.*
 
-class SettingProfilActivity : AppCompatActivity() {
+class SettingProfilPictureActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivitySettingProfilBinding
+    private lateinit var binding: ActivitySettingProfilPictureBinding
 
     private lateinit var dbRef: DatabaseReference
     private lateinit var fAuth: FirebaseAuth
@@ -40,7 +38,7 @@ class SettingProfilActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivitySettingProfilBinding.inflate(layoutInflater)
+        binding = ActivitySettingProfilPictureBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         dbRef = FirebaseDatabase.getInstance().reference
@@ -60,7 +58,7 @@ class SettingProfilActivity : AppCompatActivity() {
                     .show()
             }
 
-            ivSpFotoProfil.setOnClickListener { selectImage() }
+            btSpSelectImage.setOnClickListener { selectImage() }
 
             actionbarAndStatusbar()
         }
