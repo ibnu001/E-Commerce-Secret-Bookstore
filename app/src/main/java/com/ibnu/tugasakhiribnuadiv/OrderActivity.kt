@@ -1,5 +1,6 @@
 package com.ibnu.tugasakhiribnuadiv
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
@@ -58,6 +59,7 @@ class OrderActivity : AppCompatActivity() {
 
         // variable ValueEventListener for showing data from firebase
         val postListener = object : ValueEventListener {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
                     dataBookOrder.clear()
@@ -65,9 +67,9 @@ class OrderActivity : AppCompatActivity() {
                     for (listBookOrder in snapshot.children) {
                         val bookOrder = listBookOrder.getValue(BookOrder::class.java)
                         // make newest item on top
-                        dataBookOrder.add(0, bookOrder!!)
-                        adapter.notifyDataSetChanged()
+                        dataBookOrder.add(bookOrder!!)
                     }
+                    adapter.notifyDataSetChanged()
                     orderRv.adapter = BookOrderAdapter(this@OrderActivity, dataBookOrder)
                 }
             }

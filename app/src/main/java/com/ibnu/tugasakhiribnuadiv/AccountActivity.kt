@@ -155,8 +155,8 @@ class AccountActivity : AppCompatActivity() {
                         val historyOrder = listHistoryOrder.getValue(HistoryOrder::class.java)
                         // make newest item on top
                         dataHistoryOrder.add(0, historyOrder!!)
-                        adapter.notifyDataSetChanged()
                     }
+                    adapter.notifyDataSetChanged()
                     historyRv.adapter = HistoryOrderAdapter(this@AccountActivity, dataHistoryOrder)
                 }
             }

@@ -67,6 +67,7 @@ class BookOrderAdapter(
                     putExtra("uidOrder", currentItem.uidOrder)
                 }
                 itemView.context.startActivity(intent)
+
             }
 
             btDelete.setOnClickListener {
@@ -76,7 +77,6 @@ class BookOrderAdapter(
                 val uidOrder = currentItem.uidOrder.toString()
 
                 dbRef.child("order").child(uidUser).child(uidOrder).removeValue()
-
                 mCardView.visibility = View.GONE
             }
         }

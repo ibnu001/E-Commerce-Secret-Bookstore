@@ -1,5 +1,6 @@
 package com.ibnu.tugasakhiribnuadiv
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -56,6 +57,7 @@ class DashboardActivity : AppCompatActivity() {
         fAuth = FirebaseAuth.getInstance()
 
         dbRef.addValueEventListener(object : ValueEventListener {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
                     dataBookSaleList.clear()
@@ -63,9 +65,8 @@ class DashboardActivity : AppCompatActivity() {
                     for (listBookSale in snapshot.children) {
                         val bookSale = listBookSale.getValue(BookSell::class.java)
                         dataBookSaleList.add(bookSale!!)
-                        adapter.notifyDataSetChanged()
-
                     }
+                    adapter.notifyDataSetChanged()
                     DasboardRv.adapter = BookSellAdapter(this@DashboardActivity, dataBookSaleList)
                 }
             }
